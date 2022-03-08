@@ -17,11 +17,11 @@ def page_index():
 @app.route("/candidate/<int:uid>")
 def page_candidate(uid):
     candidate = utils.get_candidate_by_id(uid)
-    page_content = f"<img src={candidate['picture']}" + "\n"
+    page_content = f"<img src={candidate['picture']}> \n"
     page_content += "<pre>"
-    page_content += f"{ candidate['name']}" + "\n"
-    page_content += f"{ candidate['position']}" + "\n"
-    page_content += f"{ candidate['skills']}" + "\n"
+    page_content += f"{ candidate['name']} \n"
+    page_content += f"{ candidate['position']} \n"
+    page_content += f"{ candidate['skills']} \n"
     page_content += "</pre>"
     return page_content
 
@@ -31,10 +31,10 @@ def page_skill(skill):
     page_content = ""
 
     for candidate in candidates:
-        page_content += f"{candidate['name']}" + "\n"
-        page_content += f"{candidate['position']}" + "\n"
-        page_content += f"{candidate['skills']}" + "\n"
+        page_content += f"{candidate['name']} \n"
+        page_content += f"{candidate['position']} \n"
+        page_content += f"{candidate['skills']} \n"
 
-   return "<pre>" + page_content + "</pre>"
+    return "<pre>" + page_content + "</pre>"
 
 app.run()
